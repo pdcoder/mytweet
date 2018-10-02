@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from .models import Tweets
-from django.views.generic import ListView,DetailView
-
+from django.views.generic import ListView,DetailView, CreateView
+from .forms import TweetModelForm
 # Create your views here.
 
+
+class TweetCreateView(CreateView):
+    form = TweetModelForm()
 
 class TweetDetailView(DetailView):
     queryset = Tweets.objects.all()
