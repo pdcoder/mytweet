@@ -1,4 +1,4 @@
-from .views import  TweetCreateView, TweetDetailView, TweetListView
+from .views import  TweetCreateView, TweetDetailView, TweetListView, TweetUpdateView
 from django.conf.urls import url
 
 urlpatterns = [
