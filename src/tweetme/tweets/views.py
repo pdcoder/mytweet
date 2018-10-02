@@ -8,15 +8,18 @@ from .mixin import FormUserNeededList
 # Create your views here.
 
 
-class TweetCreateView(CreateView):
+class TweetCreateView(FormUserNeededList, CreateView):
     #queryset = Tweets.objects.all()
     template_name ='tweets/create_view_html'
     form_class = TweetModelForm
     success_url = "/tweet/create/"
     login_url = '/login/'
 
-class TweetUpdateView(UpdateView):
-    
+class TweetUpdateView(LoginRequiredMixin,UpdateView):
+    queryset         =   Tweets.objects.all()
+    form_class       =   TweetModelForm
+    template_name    =   'tweet/update_view.html'
+    success_url      =   '/tweet/'
 
 class TweetDetailView(DetailView):
     queryset = Tweets.objects.all()
