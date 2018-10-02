@@ -6,4 +6,3 @@ urlpatterns = [
     url(r'^1/', tweet_detail_view, name="detail"),
 
 ]
-}
