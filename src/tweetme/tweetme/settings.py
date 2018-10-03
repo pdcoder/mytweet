@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tweets',
-    'crispy-forms', 
+    'django-crispy-forms', 
     'rest_framework'
 ]
 
